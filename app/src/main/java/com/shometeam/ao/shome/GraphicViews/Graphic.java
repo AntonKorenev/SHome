@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author Anton Korenev
  * @version 1.0
  */
-public abstract class Graphic {
+public abstract class Graphic {//
     /**
      * The collection of graphics on this widget
      */
