@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GraphicView">
+        <attr name="mtext" format="string"/>
+        <attr name="mcolor" format="string"/>
+        <attr name="mtype" format="string"/>
+    </declare-styleable>
+</resources>

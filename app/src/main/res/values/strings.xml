@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">SHome</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Drawer items -->
+    <string name="drawer_item_home">Home</string>
+    <string name="drawer_item_rooms">Rooms</string>
+    <string name="drawer_item_statistics">Statistics</string>
+    <string name="drawer_item_settings">Settings</string>
+    <string name="drawer_item_help">Help</string>
+    <string name="drawer_item_shome_settings">Smart home</string>
+    <string name="drawer_item_contact">Contact</string>
+
+
+    <!-- Screens -->
+    <!-- Fragment Main -->
+    <string name="main_max_usage_title">Max Usage</string>
+    <string name="main_max_usage_value">200</string>
+    <string name="main_min_usage_title">Min Usage</string>
+    <string name="main_min_usage_value">100</string>
+    <string name="main_target_temperature_title">Target Temperature</string>
+    <string name="main_target_temperature_value">21</string>
+    <string name="main_graphic_title">Energy usage</string>
+    <string name="main_histogram_title">Energy savings</string>
+    <string name="main_fab_prompt">\tPress to change</string>
+
+    <!-- Fragment Contact -->
+    <string name="contact_message_title">Message to the app developers:</string>
+    <string name="contact_message_value"> </string>
+
+    <!--Activity rooms -->
+    <string name="rooms_humidity_title">Humidity</string>
+    <string name="rooms_temperature_title">Temperature</string>
+    <string name="rooms_pressure_title">Pressure</string>
+    <string name="rooms_luminosity_title">Luminosity</string>
+    <string name="rooms_tab_title">Room\t</string>
+    <string name="rooms_toast">New value is:\t</string>
+
+    <!--Activity Settings -->
+    <string name="settings_category_general_title">General</string>
+    <string name="settings_category_microclimate_title">Microclimate</string>
+    <string name="settings_category_security_title">Security</string>
+    
+    <string name="settings_microclimate_common">Common climate</string>
+    <string name="settings_microclimate_common_prompt">
+        The same microclimate parameters for the whole house
+    </string>
+    <string name="settings_microclimate_temperature">Temperature °C</string>
+    <string name="settings_microclimate_temperature_prompt">Set the temperature</string>
+    <string name="settings_microclimate_humidity">Humidity %</string>
+    <string name="settings_microclimate_humidity_prompt">Set the humidity</string>
+    <string name="settings_microclimate_luminosity">Luminosity %</string>
+    <string name="settings_microclimate_luminosity_prompt">
+        Set the luminosity(backlight brightness)
+    </string>
+    
+    <string name="settings_general_cloud_services">Cloud services</string>
+    <string name="settings_general_cloud_services_prompt">
+        This option if is selected will allow the app to use cloud servises for making data backup
+    </string>
+    <string name="settings_general_cloud_services_dropbox">Dropbox</string>
+    <string name="settings_general_cloud_services_gdrive">Google Drive</string>
+    <string name="settings_general_prognosis">Neural network</string>
+    <string name="settings_general_prognosis_prompt">
+        This is used to predict an energy usage
+    </string>
+
+    <!--Activity Settings keys -->
+    <string name="settings_key_message_to_devs">KEY_MESSAGE_DEVS</string>
+    <string name="settings_key_dropbox_token">KEY_TOKEN_PAIR</string>
+    <string name="settings_key_category_microclimate">KEY_CATEGORY_MICROCLIMATE</string>
+    <string name="settings_key_category_general">KEY_CATEGORY_GENERAL</string>
+    <string name="settings_key_category_security">KEY_CATEGORY_SECURITY</string>
+    <string name="settings_key_common_climate">KEY_MICROCLIMATE_COMMON</string>
+    <string name="settings_key_temperature">KEY_MICROCLIMATE_TEMPERATURE</string>
+    <string name="settings_key_humidity">KEY_MICROCLIMATE_HUMIDITY</string>
+    <string name="settings_key_luminosity">KEY_MICROCLIMATE_LUMINOSITY</string>
+    <string name="settings_key_prognosis">KEY_PROGNOSIS</string>
+    <string name="settings_key_cloud_services">KEY_CLOUD_SERVICES</string>
+    <string name="settings_key_cloud_services_dropbox">KEY_CLOUD_SERVICES_DROPBOX</string>
+    <string name="settings_key_cloud_services_gdrive">KEY_CLOUD_SERVICES_GOOGLE_DRIVE</string>
+
+</resources>
