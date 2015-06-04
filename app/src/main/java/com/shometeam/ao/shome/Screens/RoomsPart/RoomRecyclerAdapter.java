@@ -81,7 +81,6 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                 break;
         }
 
-
         holder.mGraphiView = holder.mGraphiView.withViewType(mDataset.get(position).mType).withValues(values);
         holder.mGraphiView.setName("");
         holder.mGraphiView.setColor(mDataset.get(position).mColor);
@@ -96,7 +95,6 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
 
                 String key="";
 
-
                 NumberPicker numberPicker  = (NumberPicker)dialogView.findViewById(R.id.rooms_dialog_number_picker);
                 NumberPickerListener nl = new NumberPickerListener();
                 numberPicker.setOnValueChangedListener(nl);
@@ -107,25 +105,23 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                         numberPicker.setMaxValue(30);
                         TextView measureText = (TextView) dialogView.findViewById(R.id.rooms_dialog_measure_text);
                         measureText.setText("°C");
-                        dialogBuilder.setView(dialogView);
                         break;
                     case 1://humidity
                         key = mActivity.getResources().getString(R.string.settings_key_humidity);
                         numberPicker.setMinValue(0);
                         numberPicker.setMaxValue(100);
-                        dialogBuilder.setView(dialogView);
                         break;
                     case 2://luminosity
                         key = mActivity.getResources().getString(R.string.settings_key_luminosity);
                         numberPicker.setMinValue(0);
                         numberPicker.setMaxValue(100);
-                        dialogBuilder.setView(dialogView);
                         break;
                     case 3://pressure
                         break;
                 }
                 mSetValue = Integer.toString(numberPicker.getValue());//чтобы первое значение тоже учитывалось вне зависимости от скрола пикера
 
+                dialogBuilder.setView(dialogView);
                 dialogBuilder.setPositiveButton(android.R.string.ok, new OkButtonListener(key));
                 dialogBuilder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() { // Кнопка Отмена
                     public void onClick(DialogInterface dialog, int which) {
@@ -133,7 +129,6 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                     }
                 });
                 dialogBuilder.setCancelable(true);
-
                 dialogBuilder.create().show();
             }
         });

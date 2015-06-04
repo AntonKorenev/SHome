@@ -9,7 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="4dp"
+        android:elevation="@dimen/elevation_middle"
         android:minHeight="?attr/actionBarSize"
         android:transitionName="actionBar"
         android:background="@color/material_drawer_primary"

@@ -34,7 +34,6 @@ public class SettingsActivity extends AppCompatActivity {
         {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.layout.activity_settings_preferences);
-
         }
     }
 

@@ -3,9 +3,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:padding="10dp">
+        android:padding="@dimen/padding">
 
-        <PreferenceCategory
+    <PreferenceCategory
             android:title="@string/settings_category_microclimate_title"
             android:key="@string/settings_key_category_microclimate">
             <CheckBoxPreference
@@ -18,26 +18,58 @@
                 android:title="@string/settings_microclimate_temperature"
                 android:summary="@string/settings_microclimate_temperature_prompt"
                 android:key="@string/settings_key_temperature"
-                android:dependency="@string/settings_key_common_climate">
+                android:dependency="@string/settings_key_common_climate"
+                android:inputType="number">
             </EditTextPreference>
 
             <EditTextPreference
                 android:title="@string/settings_microclimate_humidity"
                 android:summary="@string/settings_microclimate_humidity_prompt"
                 android:key="@string/settings_key_humidity"
-                android:dependency="@string/settings_key_common_climate">
+                android:dependency="@string/settings_key_common_climate"
+                android:inputType="number">
             </EditTextPreference>
 
             <EditTextPreference
                 android:title="@string/settings_microclimate_luminosity"
                 android:summary="@string/settings_microclimate_luminosity_prompt"
                 android:key="@string/settings_key_luminosity"
-                android:dependency="@string/settings_key_common_climate">
+                android:dependency="@string/settings_key_common_climate"
+                android:inputType="number">
             </EditTextPreference>
-        </PreferenceCategory>
+    </PreferenceCategory>
 
 
-        <PreferenceCategory
+    <PreferenceCategory
+            android:title="@string/settings_category_energy_usage_title"
+            android:key="@string/settings_key_category_energy_usage">
+            <EditTextPreference
+                android:title="@string/settings_energy_usage_min"
+                android:summary="@string/settings_energy_usage_min_prompt"
+                android:key="@string/settings_key_energy_usage_min"
+                android:defaultValue="@string/main_min_usage_value"
+                android:inputType="number">
+            </EditTextPreference>
+
+            <EditTextPreference
+                android:title="@string/settings_energy_usage_max"
+                android:summary="@string/settings_energy_usage_max_prompt"
+                android:key="@string/settings_key_energy_usage_max"
+                android:defaultValue="@string/main_max_usage_value"
+                android:inputType="number">
+            </EditTextPreference>
+
+            <EditTextPreference
+                android:title="@string/settings_energy_usage_target_temperature"
+                android:summary="@string/settings_energy_usage_target_temperature_prompt"
+                android:key="@string/settings_key_energy_usage_target_temperature"
+                android:defaultValue="@string/main_target_temperature_value"
+                android:inputType="number">
+            </EditTextPreference>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
             android:title="@string/settings_category_general_title"
             android:key="@string/settings_key_category_general">
             <CheckBoxPreference
@@ -63,14 +95,13 @@
                 android:key="@string/settings_key_cloud_services_gdrive"
                 android:defaultValue="false"
                 android:dependency="@string/settings_key_cloud_services"/>
-        </PreferenceCategory>
+    </PreferenceCategory>
 
 
-        <PreferenceCategory
+    <PreferenceCategory
             android:title="@string/settings_category_security_title"
             android:key="@string/settings_key_category_security">
-
-        </PreferenceCategory>
+    </PreferenceCategory>
 
     </PreferenceScreen>
 

@@ -42,6 +42,16 @@
     <string name="settings_category_general_title">General</string>
     <string name="settings_category_microclimate_title">Microclimate</string>
     <string name="settings_category_security_title">Security</string>
+    <string name="settings_category_energy_usage_title">Energy options</string>
+
+    <string name="settings_energy_usage_min">Min usage</string>
+    <string name="settings_energy_usage_max">Max usage</string>
+    <string name="settings_energy_usage_target_temperature">Target temperature</string>
+    <string name="settings_energy_usage_min_prompt">Minimum possible energy usage of your system</string>
+    <string name="settings_energy_usage_max_prompt">Maximum possible energy usage of your system</string>
+    <string name="settings_energy_usage_target_temperature_prompt">
+        The averaged temperature that you want to establish during prognosis period
+    </string>
     
     <string name="settings_microclimate_common">Common climate</string>
     <string name="settings_microclimate_common_prompt">
@@ -71,6 +81,7 @@
     <string name="settings_key_message_to_devs">KEY_MESSAGE_DEVS</string>
     <string name="settings_key_dropbox_token">KEY_TOKEN_PAIR</string>
     <string name="settings_key_category_microclimate">KEY_CATEGORY_MICROCLIMATE</string>
+    <string name="settings_key_category_energy_usage">KEY_CATEGORY_ENERGY_USAGE</string>
     <string name="settings_key_category_general">KEY_CATEGORY_GENERAL</string>
     <string name="settings_key_category_security">KEY_CATEGORY_SECURITY</string>
     <string name="settings_key_common_climate">KEY_MICROCLIMATE_COMMON</string>
@@ -81,5 +92,9 @@
     <string name="settings_key_cloud_services">KEY_CLOUD_SERVICES</string>
     <string name="settings_key_cloud_services_dropbox">KEY_CLOUD_SERVICES_DROPBOX</string>
     <string name="settings_key_cloud_services_gdrive">KEY_CLOUD_SERVICES_GOOGLE_DRIVE</string>
+    <string name="settings_key_energy_usage_min">KEY_ENERGY_USAGE_MIN</string>
+    <string name="settings_key_energy_usage_max">KEY_ENERGY_USAGE_MAX</string>
+    <string name="settings_key_energy_usage_target_temperature">KEY_ENERGY_USAGE_TARGET_TEMPERATURE</string>
+
 
 </resources>

@@ -4,9 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
-
 import com.shometeam.ao.shome.ProjectExceptions.WrongSizeException;
-
 import java.util.ArrayList;
 
 //TODO: выбиральщик графиков

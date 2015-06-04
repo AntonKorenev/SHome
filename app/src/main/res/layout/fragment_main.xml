@@ -7,7 +7,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/activity_header"
         android:layout_gravity="left|top"
         android:weightSum="1"
         android:id="@+id/header"
@@ -42,7 +42,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/text_view"
                 android:id="@+id/editText5"
                 android:layout_weight="1.73"
                 android:textColor="@color/text_color_light"
@@ -116,7 +116,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/text_view"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/editText7"
                 android:layout_weight="1.68"
@@ -139,15 +139,15 @@
         android:elevation="1dp"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/header"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="-25dp"
+        android:layout_marginRight="@dimen/fab_margin_side"
+        android:layout_marginBottom="@dimen/fab_margin_view"
         android:background="@drawable/circle"
         android:src="@drawable/fab_next_ico" />
 
     <view
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="@dimen/padding"
+        android:layout_marginRight="@dimen/padding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         class="android.support.v7.widget.RecyclerView"
@@ -160,7 +160,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/text_view"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/main_fab_prompt"
         android:background="@color/material_drawer_accent"
