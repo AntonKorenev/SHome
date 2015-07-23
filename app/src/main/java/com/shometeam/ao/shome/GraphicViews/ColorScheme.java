@@ -180,7 +180,9 @@ public class ColorScheme {
                 scheme.setBlinkBlinkColor(context.getResources().getColor(R.color.blinkBlinkYellowColor));
                 break;
             default:
-
+                scheme.setColor(context.getResources().getColor(R.color.material_drawer_primary_dark));
+                scheme.setBlinkColor(context.getResources().getColor(R.color.material_drawer_primary));
+                scheme.setBlinkBlinkColor(context.getResources().getColor(R.color.material_drawer_primary_light));
                 break;
         }
 

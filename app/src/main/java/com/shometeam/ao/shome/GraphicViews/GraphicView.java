@@ -25,12 +25,17 @@ public class GraphicView extends View{
     /**
      * Values for displaying on the main curve or histogram
      */
-    ArrayList<Double> mGraphicValues;
+    ArrayList<Float> mGraphicValues;
 
     /**
      * Values for additional layer in histogram
      */
-    ArrayList<Double> mComparableGraphicValues;
+    ArrayList<Float> mComparableGraphicValues;
+
+    /**
+     *
+     */
+    int mMaxValue = 60;
 
     /**
      * The constructor for view with parameters
@@ -95,7 +100,7 @@ public class GraphicView extends View{
     public GraphicView withValues(ArrayList<? extends Number> values){
         mGraphicValues = new ArrayList<>();
         for(Number currentValue: values){
-            mGraphicValues.add((double)currentValue);
+            mGraphicValues.add((float)currentValue);
         }
         return this;
     }
@@ -108,7 +113,7 @@ public class GraphicView extends View{
     public GraphicView withComparableValues(ArrayList<? extends Number> comparableValues){
         mComparableGraphicValues = new ArrayList<>();
         for(Number currentValue: comparableValues){
-            mComparableGraphicValues.add((double)currentValue);
+            mComparableGraphicValues.add((float)currentValue);
         }
         return this;
     }
@@ -133,6 +138,11 @@ public class GraphicView extends View{
         return this;
     }
 
+    public GraphicView withMaxValue(int maxValue){
+        this.mMaxValue = maxValue;
+        return this;
+    }
+
     /// override methods ///
 
     /**
@@ -145,14 +155,14 @@ public class GraphicView extends View{
             case "linear": { // линейный
                 LinearGraphic graphic = new LinearGraphic(mGraphicValues, getWidth(), getHeight(),
                         ColorScheme.getColorScheme(mWidgetAttrs.mColor, getContext()),
-                        mWidgetAttrs.mName, 60);
+                        mWidgetAttrs.mName, mMaxValue);
                 graphic.draw(canvas);
                 break;
             }
             case "histogram": { //гистограмма
                 HistogramGraphic graphic = new HistogramGraphic(mGraphicValues, mComparableGraphicValues,
                         getWidth(), getHeight(), ColorScheme.getColorScheme(mWidgetAttrs.mColor,
-                        getContext()), mWidgetAttrs.mName, 60);
+                        getContext()), mWidgetAttrs.mName, mMaxValue);
                 graphic.draw(canvas);
                 break;
             }

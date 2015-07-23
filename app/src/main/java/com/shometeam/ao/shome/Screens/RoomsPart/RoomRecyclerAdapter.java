@@ -20,6 +20,9 @@ import com.shometeam.ao.shome.R;
 
 import java.util.ArrayList;
 
+import Networking.Message;
+import Networking.NetworkConnector;
+
 
 public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapter.ViewHolder> {
 
@@ -37,7 +40,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
         }
     }
 
-    public RoomRecyclerAdapter(ArrayList<GraphicWidgetData> dataset, Activity activity) {
+    public RoomRecyclerAdapter(ArrayList<GraphicWidgetData> dataset,Activity activity) {
         mDataset = dataset;
         mActivity = activity;
     }
@@ -52,18 +55,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
     }
 
     @Override
-    public void onBindViewHolder(RoomRecyclerAdapter.ViewHolder holder, final int position) {
-        ArrayList<Double> values = new ArrayList<>();
-        values.add(33d);
-        values.add(37d);
-        values.add(32d);
-        values.add(31d);
-        values.add(39d);
-        values.add(22d);
-        values.add(44d);
-        values.add(35d);
-        values.add(21d);
-
+    public void onBindViewHolder(final RoomRecyclerAdapter.ViewHolder holder, final int position) {
         TextView nameTextView = (TextView) holder.itemView.findViewById(R.id.graphic_name);
         nameTextView.setText(mDataset.get(position).mName);
         switch (mDataset.get(position).mColor){
@@ -79,11 +71,50 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
             case "green":
                 nameTextView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.blinkBlinkGreenColor));
                 break;
+            default:
+                nameTextView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.material_drawer_primary_dark));
+                break;
         }
 
-        holder.mGraphiView = holder.mGraphiView.withViewType(mDataset.get(position).mType).withValues(values);
+        ArrayList<Float> defArray = new ArrayList<>();
+        defArray.add(1f);
+        defArray.add(2f);
+        defArray.add(3f);
+        defArray.add(4f);
+        holder.mGraphiView = holder.mGraphiView.withViewType(mDataset.get(position).mType).withValues(defArray);
         holder.mGraphiView.setName("");
         holder.mGraphiView.setColor(mDataset.get(position).mColor);
+
+        /*NetworkAssync nac;
+        int max_value_of_graphic = 60;
+        switch (position){
+            case 0:
+                nac = new NetworkAssync("192.168.1.100", 2100, 2000, holder.mGraphiView,
+                        Message.createInfoMessage(Message.PARAMETER.TEMPERATURE));
+                break;
+            case 1:
+                nac = new NetworkAssync("192.168.1.100", 2100, 2000, holder.mGraphiView,
+                        Message.createInfoMessage(Message.PARAMETER.HUMIDITY));
+                break;
+            case 2:
+                max_value_of_graphic = 1023;
+                nac = new NetworkAssync("192.168.1.100", 2100, 2000, holder.mGraphiView,
+                        Message.createInfoMessage(Message.PARAMETER.LUMINOSITY));
+                holder.mGraphiView = holder.mGraphiView.withMaxValue(max_value_of_graphic);
+                holder.mGraphiView.invalidate();
+                break;
+            case 3:
+                max_value_of_graphic = 900;
+                nac = new NetworkAssync("192.168.1.100", 2100, 2000, holder.mGraphiView,
+                        Message.createInfoMessage(Message.PARAMETER.PRESSURE));
+                holder.mGraphiView = holder.mGraphiView.withMaxValue(max_value_of_graphic);
+                holder.mGraphiView.invalidate();
+                break;
+            default:
+                nac = new NetworkAssync("192.168.1.100", 2100, 2000, holder.mGraphiView,
+                        Message.createInfoMessage(Message.PARAMETER.ALL));
+        }
+        nac.execute();*/
 
         ImageButton fab = (ImageButton) holder.itemView.findViewById(R.id.fab_room);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -93,12 +124,12 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                 View dialogView = mActivity.getLayoutInflater().inflate(R.layout.dialog_rooms, null);
                 dialogBuilder.setTitle(mDataset.get(position).mName);
 
-                String key="";
+                String key = "";
 
-                NumberPicker numberPicker  = (NumberPicker)dialogView.findViewById(R.id.rooms_dialog_number_picker);
+                NumberPicker numberPicker = (NumberPicker) dialogView.findViewById(R.id.rooms_dialog_number_picker);
                 NumberPickerListener nl = new NumberPickerListener();
                 numberPicker.setOnValueChangedListener(nl);
-                switch (position){
+                switch (position) {
                     case 0: //temperature
                         key = mActivity.getResources().getString(R.string.settings_key_temperature);
                         numberPicker.setMinValue(10);
@@ -114,7 +145,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                     case 2://luminosity
                         key = mActivity.getResources().getString(R.string.settings_key_luminosity);
                         numberPicker.setMinValue(0);
-                        numberPicker.setMaxValue(100);
+                        numberPicker.setMaxValue(1200);
                         break;
                     case 3://pressure
                         break;
@@ -133,7 +164,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
             }
         });
 
-        holder.mGraphiView.invalidate();
+        //holder.mGraphiView.invalidate();
     }
 
 
@@ -158,6 +189,29 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
             edit.putString(mKey, mSetValue);
             edit.commit();
             Toast.makeText(mActivity, mActivity.getResources().getString(R.string.rooms_toast)+mSetValue, Toast.LENGTH_SHORT).show();
+
+
+            try{
+                NetworkConnector nc = new NetworkConnector("192.168.1.100",2100,2000) {
+                    @Override
+                    public void handle(Object obj) {
+
+                    }
+                };
+                nc.start();
+                if(mKey.equals(mActivity.getResources().getString(R.string.settings_key_temperature))){
+                    nc.send(Message.createSetMessage(Message.PARAMETER.TEMPERATURE,Float.valueOf(mSetValue)));
+                } else if (mKey.equals(mActivity.getResources().getString(R.string.settings_key_humidity))){
+                    nc.send(Message.createSetMessage(Message.PARAMETER.HUMIDITY,Float.valueOf(mSetValue)));
+                } else if(mKey.equals(mActivity.getResources().getString(R.string.settings_key_luminosity))){
+                    nc.send(Message.createSetMessage(Message.PARAMETER.LUMINOSITY,Float.valueOf(mSetValue)));
+                }
+                nc.close();
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
+
+
             dialog.dismiss();
         }
     }
@@ -167,4 +221,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
     public int getItemCount() {
         return mDataset.size();
     }
+
+
+
 }

@@ -38,12 +38,12 @@ public class HistogramGraphic extends Graphic {
     /**
      * Actual values for representing in graphic
      */
-    ArrayList<Double> mValues;
+    ArrayList<Float> mValues;
 
     /**
      * Values for additional(comparable) layer
      */
-    ArrayList<Double> mAdditionalValues;
+    ArrayList<Float> mAdditionalValues;
 
     /**
      * The main constructor of the class
@@ -55,7 +55,7 @@ public class HistogramGraphic extends Graphic {
      * @param graphicName the name of histogram and view(is displayed in top right corner)
      * @param diapazon the range of value from 0 to diapazon(max)
      */
-    public HistogramGraphic(ArrayList<Double> values, ArrayList<Double> additionalValues, int width, int height, ColorScheme colorScheme, String graphicName, int diapazon){
+    public HistogramGraphic(ArrayList<Float> values, ArrayList<Float> additionalValues, int width, int height, ColorScheme colorScheme, String graphicName, int diapazon){
         mHeight = height;
         mWidth = width;
         mColorScheme = colorScheme;
@@ -124,7 +124,7 @@ public class HistogramGraphic extends Graphic {
         double newDiapazon = currentDiapazon/(mDiapazon);
 
         for(Number d: values){
-            converted_points.add(new Point(currentX, (int) ((mDiapazon - (double)d) * newDiapazon)+mIndentY));
+            converted_points.add(new Point(currentX, (int) ((mDiapazon - (float)d) * newDiapazon)+mIndentY));
             currentX += stepX;
         }
 

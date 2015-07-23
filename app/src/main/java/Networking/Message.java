@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.shometeam.ao.shome.SyncClasses;
+package Networking;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author ao
  */
-public class Message {
+public class Message implements Serializable {
     public static enum ACTIONS{GET,SET,TURN}
-    public static enum PARAMETER{TEMPERATURE, HUMIDITY, LUMINOSITY, PRESSURE, ENERGY_USAGE}
-    
+    public static enum PARAMETER{TEMPERATURE, HUMIDITY, LUMINOSITY, PRESSURE, ENERGY_USAGE, ALL}
+
     private ACTIONS mAction;
     private PARAMETER mParameter;
     private float mSetValue;
@@ -60,7 +61,7 @@ public class Message {
         return new Message(ACTIONS.GET, respondParameter, respondValues);
     }
 
-    public PARAMETER getParameter(){
+    public PARAMETER getParameter() {
         return mParameter;
     }
 
@@ -80,3 +81,4 @@ public class Message {
         return mRespondValues;
     }
 }
+

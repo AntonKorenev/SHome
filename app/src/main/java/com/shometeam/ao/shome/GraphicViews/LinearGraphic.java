@@ -49,7 +49,7 @@ public class LinearGraphic extends Graphic {
      * @param graphicName the name of histogram and view(is displayed in top right corner)
      * @param diapazon the range of value from 0 to diapazon(max)
      */
-    LinearGraphic(ArrayList<Double> values,int width,int height,ColorScheme colorScheme,String graphicName,int diapazon){
+    LinearGraphic(ArrayList<Float> values,int width,int height,ColorScheme colorScheme,String graphicName,int diapazon){
         mHeight = height;
         mWidth = width;
         mColorScheme = colorScheme;
@@ -144,8 +144,6 @@ public class LinearGraphic extends Graphic {
             Point previousPoint = null;
 
             for(Point thisPoint: mGraphicCurves.get(j)){
-                drawPoint(canvas,thisPoint);
-
                 if(i>0){
                     drawLine(canvas,previousPoint,thisPoint);
                     graph.lineTo(thisPoint.x,thisPoint.y);
@@ -153,6 +151,8 @@ public class LinearGraphic extends Graphic {
 
                 previousPoint = thisPoint;
                 i++;
+
+                drawPoint(canvas,thisPoint);
             }
             //closing figure circuit
             graph.lineTo(mWidth,mHeight-mIndentY);
@@ -193,7 +193,7 @@ public class LinearGraphic extends Graphic {
         double newDiapazon = currentDiapazon/(mDiapazon);
 
         for(Number d: values){
-            converted_points.add(new Point(currentX, (int) ((mDiapazon - (double)d) * newDiapazon)+mIndentY));
+            converted_points.add(new Point(currentX, (int) ((mDiapazon - (float)d) * newDiapazon)+mIndentY));
             currentX += stepX;
         }
 

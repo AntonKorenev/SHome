@@ -42,9 +42,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+
         //начнем коннект к Dropbox
-        mDBoxConnector = new DropboxConnector();
-        mDBoxConnector.startAuthentification(this);
+        //mDBoxConnector = new DropboxConnector();
+        //mDBoxConnector.startAuthentification(this);
 
         /*
         //пример загрузки/закачки
@@ -210,6 +214,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        mDBoxConnector.finishAuthentification(this);
+        //mDBoxConnector.finishAuthentification(this);
     }
 }

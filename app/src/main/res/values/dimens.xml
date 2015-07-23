@@ -13,8 +13,6 @@
     <dimen name="padding">10dp</dimen>
     <dimen name="padding_double">20dp</dimen>
 
-    <dimen name="card_view_item_width">310dp</dimen>
-    <dimen name="card_view_item_height">250dp</dimen>
     <dimen name="card_view_item_height_with_header">290dp</dimen>
     <dimen name="card_view_item_header_height">32dp</dimen>
     <dimen name="card_view_item_header_text">16sp</dimen>
@@ -24,8 +22,8 @@
     <dimen name="fab_big">64dp</dimen>
 
     <dimen name="fab_margin_side">20dp</dimen>
-    <dimen name="fab_margin_side_minus">-15dp</dimen>
-    <dimen name="fab_margin_view">-25dp</dimen>
+    <dimen name="fab_margin_side_minus">5dp</dimen>
+    <dimen name="fab_margin_view">-5dp</dimen>
 
     <dimen name="corner_radius">5dp</dimen>
     <dimen name="marging">5dp</dimen>

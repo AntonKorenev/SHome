@@ -38,10 +38,12 @@ public class RoomsFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(c);
         recyclerView.setLayoutManager(layoutManager);
 
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 final RoomRecyclerAdapter adapter = new RoomRecyclerAdapter(getDataSet(), getActivity());
+
                 c.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -56,10 +58,14 @@ public class RoomsFragment extends Fragment {
 
     private ArrayList<GraphicWidgetData> getDataSet() {
         ArrayList<GraphicWidgetData> mDataSet = new ArrayList<>();
-        mDataSet.add(new GraphicWidgetData("red",getResources().getString(R.string.rooms_temperature_title),"linear"));
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_temperature_title),"linear"));
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_humidity_title),"linear"));//добавть еще одно поле для значений
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_luminosity_title),"linear"));
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_pressure_title),"linear"));
+        /*mDataSet.add(new GraphicWidgetData("red",getResources().getString(R.string.rooms_temperature_title),"linear"));
         mDataSet.add(new GraphicWidgetData("blue",getResources().getString(R.string.rooms_humidity_title),"linear"));//добавть еще одно поле для значений
         mDataSet.add(new GraphicWidgetData("yellow",getResources().getString(R.string.rooms_luminosity_title),"linear"));
-        mDataSet.add(new GraphicWidgetData("green",getResources().getString(R.string.rooms_pressure_title),"linear"));
+        mDataSet.add(new GraphicWidgetData("green",getResources().getString(R.string.rooms_pressure_title),"linear"));*/
         return mDataSet;
     }
 

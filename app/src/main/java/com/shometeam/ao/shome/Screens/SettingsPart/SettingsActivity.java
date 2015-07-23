@@ -25,6 +25,8 @@ public class SettingsActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+
     }
 
     public static class MyPreferenceFragment extends PreferenceFragment
