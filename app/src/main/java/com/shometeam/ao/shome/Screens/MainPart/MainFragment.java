@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.shometeam.ao.shome.GraphicViews.GraphicWidgetData;
+import com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicWidgetData;
 import com.shometeam.ao.shome.R;
 import com.shometeam.ao.shome.Screens.SampleFragment;
 
@@ -35,7 +35,7 @@ public class MainFragment extends SampleFragment {
         ArrayList<GraphicWidgetData> myDataset = getDataSet();
 
         final View view = inflater.inflate(R.layout.fragment_main, container, false);
-        final FragmentActivity c = getActivity();
+        final Activity c = getActivity();
         final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(c);
         //layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);

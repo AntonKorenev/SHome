@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.shometeam.ao.shome.GraphicViews.GraphicView;
-import com.shometeam.ao.shome.GraphicViews.GraphicWidgetData;
+import com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicView;
+import com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicWidgetData;
 import com.shometeam.ao.shome.R;
 
 import java.util.ArrayList;

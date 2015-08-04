@@ -1,4 +1,4 @@
-package com.shometeam.ao.shome.GraphicViews;
+package com.shometeam.ao.shome.CustomGuiElements.GraphicViews;
 
 import android.content.Context;
 
@@ -180,9 +180,9 @@ public class ColorScheme {
                 scheme.setBlinkBlinkColor(context.getResources().getColor(R.color.blinkBlinkYellowColor));
                 break;
             default:
-                scheme.setColor(context.getResources().getColor(R.color.material_drawer_primary_dark));
-                scheme.setBlinkColor(context.getResources().getColor(R.color.material_drawer_primary));
-                scheme.setBlinkBlinkColor(context.getResources().getColor(R.color.material_drawer_primary_light));
+                scheme.setColor(context.getResources().getColor(R.color.ColorPrimaryDark));
+                scheme.setBlinkColor(context.getResources().getColor(R.color.ColorPrimary));
+                scheme.setBlinkBlinkColor(context.getResources().getColor(R.color.ColorPrimaryAccent));
                 break;
         }
 

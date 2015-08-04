@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- group with single selected item so only one item is highlighted in the nav menu -->
+        <group android:id="@+id/gr1"
+            android:checkableBehavior="single">
+            <item
+                android:id="@+id/main_item"
+                android:icon="@drawable/ic_main"
+                android:title="@string/drawer_item_main"/>
+            <item
+                android:id="@+id/greenhouse_item"
+                android:icon="@drawable/ic_greenhouse"
+                android:title="@string/drawer_item_greenhouse"/>
+            <item
+                android:id="@+id/climateplan_item"
+                android:icon="@drawable/ic_programplan"
+                android:title="@string/drawer_item_climateplan"/>
+        </group>
+        <group android:id="@+id/gr2"
+            android:checkableBehavior="single">
+            <item
+                android:id="@+id/contact_item"
+                android:icon="@drawable/ic_contact"
+                android:title="@string/drawer_item_contact"/>
+        </group>
+</menu>

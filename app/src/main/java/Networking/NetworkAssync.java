@@ -2,7 +2,7 @@ package Networking;
 
 import android.os.AsyncTask;
 
-import com.shometeam.ao.shome.GraphicViews.GraphicView;
+import com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicView;
 
 import java.io.IOException;
 import java.io.InputStream;

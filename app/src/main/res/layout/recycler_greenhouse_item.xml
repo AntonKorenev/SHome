@@ -34,16 +34,15 @@
                     android:gravity="center"
                     android:textAlignment="center"
                     android:textSize="@dimen/card_view_item_header_text"
-                    android:textColor="@color/text_color_light"
+                    android:textColor="@color/TextColorLight"
                     android:elevation="@dimen/elevation_middle"
-                    android:background="@color/material_drawer_divider"
                     />
 
                 <view
                     xmlns:graphic_view="http://schemas.android.com/apk/res/com.shometeam.ao.shome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    class="com.shometeam.ao.shome.GraphicViews.GraphicView"
+                    class="com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicView"
                     android:id="@+id/gr_view"
                     android:layout_gravity="center_horizontal"
                     graphic_view:mtext = "asd"

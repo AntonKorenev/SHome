@@ -1,4 +1,4 @@
-package com.shometeam.ao.shome.GraphicViews;
+package com.shometeam.ao.shome.CustomGuiElements.GraphicViews;
 
 import android.content.Context;
 import android.content.res.TypedArray;

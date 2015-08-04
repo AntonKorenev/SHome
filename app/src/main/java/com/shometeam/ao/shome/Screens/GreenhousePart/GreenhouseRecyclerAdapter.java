@@ -1,4 +1,4 @@
-package com.shometeam.ao.shome.Screens.RoomsPart;
+package com.shometeam.ao.shome.Screens.GreenhousePart;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -14,8 +14,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.shometeam.ao.shome.GraphicViews.GraphicView;
-import com.shometeam.ao.shome.GraphicViews.GraphicWidgetData;
+import com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicView;
+import com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicWidgetData;
 import com.shometeam.ao.shome.R;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import Networking.Message;
 import Networking.NetworkConnector;
 
 
-public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapter.ViewHolder> {
+public class GreenhouseRecyclerAdapter extends RecyclerView.Adapter<GreenhouseRecyclerAdapter.ViewHolder> {
 
     private ArrayList<GraphicWidgetData> mDataset;
     private Activity mActivity;
@@ -40,22 +40,22 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
         }
     }
 
-    public RoomRecyclerAdapter(ArrayList<GraphicWidgetData> dataset,Activity activity) {
+    public GreenhouseRecyclerAdapter(ArrayList<GraphicWidgetData> dataset, Activity activity) {
         mDataset = dataset;
         mActivity = activity;
     }
 
     @Override
-    public RoomRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public GreenhouseRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                          int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_rooms_item, parent, false);
+                .inflate(R.layout.recycler_greenhouse_item, parent, false);
 
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final RoomRecyclerAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final GreenhouseRecyclerAdapter.ViewHolder holder, final int position) {
         TextView nameTextView = (TextView) holder.itemView.findViewById(R.id.graphic_name);
         nameTextView.setText(mDataset.get(position).mName);
         switch (mDataset.get(position).mColor){
@@ -72,7 +72,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
                 nameTextView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.blinkBlinkGreenColor));
                 break;
             default:
-                nameTextView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.material_drawer_primary_dark));
+                nameTextView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.ColorPrimaryDark));
                 break;
         }
 
@@ -121,7 +121,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(mActivity);
-                View dialogView = mActivity.getLayoutInflater().inflate(R.layout.dialog_rooms, null);
+                View dialogView = mActivity.getLayoutInflater().inflate(R.layout.dialog_greenhouse, null);
                 dialogBuilder.setTitle(mDataset.get(position).mName);
 
                 String key = "";
@@ -188,7 +188,7 @@ public class RoomRecyclerAdapter extends RecyclerView.Adapter<RoomRecyclerAdapte
             SharedPreferences.Editor edit = prefs.edit();
             edit.putString(mKey, mSetValue);
             edit.commit();
-            Toast.makeText(mActivity, mActivity.getResources().getString(R.string.rooms_toast)+mSetValue, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mActivity, mActivity.getResources().getString(R.string.greenhouse_toast)+mSetValue, Toast.LENGTH_SHORT).show();
 
 
             try{

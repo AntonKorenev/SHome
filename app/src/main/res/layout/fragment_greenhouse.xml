@@ -8,7 +8,7 @@
     android:weightSum="1">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_rooms"
+        android:id="@+id/recycler_view_greenhouse"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

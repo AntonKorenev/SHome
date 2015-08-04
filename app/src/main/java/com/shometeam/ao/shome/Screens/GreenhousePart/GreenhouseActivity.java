@@ -1,4 +1,4 @@
-package com.shometeam.ao.shome.Screens.RoomsPart;
+package com.shometeam.ao.shome.Screens.GreenhousePart;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +15,7 @@ import android.view.View;
 import com.shometeam.ao.shome.R;
 import com.shometeam.ao.shome.SlidingTabLayout;
 
-public class RoomsActivity extends AppCompatActivity {
+public class GreenhouseActivity extends AppCompatActivity {
     private SlidingTabLayout mSlidingTabLayout;
     private ViewPager mViewPager;
     PagerAdapter mPagerAdapter;
@@ -24,7 +24,7 @@ public class RoomsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rooms);
+        setContentView(R.layout.activity_greenhouse);
         Toolbar toolbarTabs = (Toolbar) findViewById(R.id.my_awesome_toolbar);
 
         // Инициализируем Toolbar
@@ -61,7 +61,7 @@ public class RoomsActivity extends AppCompatActivity {
 
         mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
         mSlidingTabLayout.setViewPager(mViewPager);
-        mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.material_drawer_primary));
+        mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.ColorPrimary));
 
     /*
      * FragmentTransaction transaction =
@@ -100,7 +100,7 @@ public class RoomsActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return RoomsFragment.newInstance(position);
+            return GreenhouseFragment.newInstance(position);
         }//привязка к комнатному фрашгменту
 
         @Override
@@ -110,7 +110,7 @@ public class RoomsActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return getResources().getString(R.string.rooms_tab_title) + (position+1);
+            return getResources().getString(R.string.greenhouse_tab_title) + (position+1);
         }
 
     }

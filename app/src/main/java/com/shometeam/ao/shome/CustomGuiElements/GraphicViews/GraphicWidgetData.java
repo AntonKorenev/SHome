@@ -1,4 +1,4 @@
-package com.shometeam.ao.shome.GraphicViews;
+package com.shometeam.ao.shome.CustomGuiElements.GraphicViews;
 
 /**
  * Class with visual parameters of GraphicView

@@ -1,4 +1,4 @@
-package com.shometeam.ao.shome.GraphicViews;
+package com.shometeam.ao.shome.CustomGuiElements.GraphicViews;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;

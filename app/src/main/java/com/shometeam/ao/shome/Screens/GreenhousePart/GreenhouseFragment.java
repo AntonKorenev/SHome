@@ -1,4 +1,4 @@
-package com.shometeam.ao.shome.Screens.RoomsPart;
+package com.shometeam.ao.shome.Screens.GreenhousePart;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,8 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.shometeam.ao.shome.GraphicViews.GraphicWidgetData;
+import com.shometeam.ao.shome.CustomGuiElements.GraphicViews.GraphicWidgetData;
 import com.shometeam.ao.shome.R;
 
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 /**
  * Created by ao on 20.04.15.
  */
-public class RoomsFragment extends Fragment {
+public class GreenhouseFragment extends Fragment {
 
     static final String ARGUMENT_PAGE_NUMBER = "arg_page_number";
     int mRoomNumber;
@@ -32,9 +31,9 @@ public class RoomsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ArrayList<GraphicWidgetData> myDataset = getDataSet();
 
-        final View view = inflater.inflate(R.layout.fragment_rooms, container, false);
+        final View view = inflater.inflate(R.layout.fragment_greenhouse, container, false);
         final FragmentActivity c = getActivity();
-        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_rooms);
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_greenhouse);
         LinearLayoutManager layoutManager = new LinearLayoutManager(c);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -42,7 +41,7 @@ public class RoomsFragment extends Fragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final RoomRecyclerAdapter adapter = new RoomRecyclerAdapter(getDataSet(), getActivity());
+                final GreenhouseRecyclerAdapter adapter = new GreenhouseRecyclerAdapter(getDataSet(), getActivity());
 
                 c.runOnUiThread(new Runnable() {
                     @Override
@@ -58,10 +57,10 @@ public class RoomsFragment extends Fragment {
 
     private ArrayList<GraphicWidgetData> getDataSet() {
         ArrayList<GraphicWidgetData> mDataSet = new ArrayList<>();
-        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_temperature_title),"linear"));
-        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_humidity_title),"linear"));//добавть еще одно поле для значений
-        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_luminosity_title),"linear"));
-        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.rooms_pressure_title),"linear"));
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.greenhouse_temperature_title),"linear"));
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.greenhouse_humidity_title),"linear"));//добавть еще одно поле для значений
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.greenhouse_luminosity_title),"linear"));
+        mDataSet.add(new GraphicWidgetData("def",getResources().getString(R.string.greenhouse_pressure_title),"linear"));
         /*mDataSet.add(new GraphicWidgetData("red",getResources().getString(R.string.rooms_temperature_title),"linear"));
         mDataSet.add(new GraphicWidgetData("blue",getResources().getString(R.string.rooms_humidity_title),"linear"));//добавть еще одно поле для значений
         mDataSet.add(new GraphicWidgetData("yellow",getResources().getString(R.string.rooms_luminosity_title),"linear"));
@@ -70,8 +69,8 @@ public class RoomsFragment extends Fragment {
     }
 
 
-    public static RoomsFragment newInstance(int page) {//создает 4ре графика для комнаты
-        RoomsFragment roomsFragment = new RoomsFragment();
+    public static GreenhouseFragment newInstance(int page) {//создает 4ре графика для комнаты
+        GreenhouseFragment roomsFragment = new GreenhouseFragment();
         Bundle arguments = new Bundle();
         arguments.putInt(ARGUMENT_PAGE_NUMBER, page);
         roomsFragment.setArguments(arguments);

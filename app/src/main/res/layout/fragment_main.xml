@@ -32,7 +32,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/main_max_usage_title"
                 android:id="@+id/textView8"
-                android:textColor="@color/text_color_light"
+                android:textColor="@color/TextColorLight"
                 android:background="@color/blinkBlueColor"
                 android:gravity="center" />
 
@@ -45,7 +45,7 @@
                 android:layout_height="@dimen/text_view"
                 android:id="@+id/editText5"
                 android:layout_weight="1.73"
-                android:textColor="@color/text_color_light"
+                android:textColor="@color/TextColorLight"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/main_max_usage_value"
                 android:textAlignment="center"
@@ -69,7 +69,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/main_min_usage_title"
                 android:id="@+id/textView9"
-                android:textColor="@color/text_color_light"
+                android:textColor="@color/TextColorLight"
                 android:background="@color/blinkBlueColor"
                 android:gravity="center" />
 
@@ -83,7 +83,7 @@
                 android:id="@+id/editText6"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
-                android:textColor="@color/text_color_light"
+                android:textColor="@color/TextColorLight"
                 android:text="@string/main_min_usage_value"
                 android:gravity="center"
                 android:textIsSelectable="true"
@@ -105,7 +105,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/main_target_temperature_title"
                 android:id="@+id/textView10"
-                android:textColor="@color/text_color_light"
+                android:textColor="@color/TextColorLight"
                 android:background="@color/blinkBlueColor"
                 android:gravity="top|center" />
 
@@ -120,7 +120,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/editText7"
                 android:layout_weight="1.68"
-                android:textColor="@color/text_color_light"
+                android:textColor="@color/TextColorLight"
                 android:theme="@style/AppTheme"
                 android:text="@string/main_target_temperature_value"
                 android:gravity="center"
@@ -163,8 +163,8 @@
         android:layout_height="@dimen/text_view"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/main_fab_prompt"
-        android:background="@color/material_drawer_accent"
-        android:textColor="@color/text_color_light"
+        android:background="@color/ColorPrimaryAccent"
+        android:textColor="@color/TextColorLight"
         android:id="@+id/text_promt"
         android:layout_alignTop="@+id/fab_main"
         android:layout_alignParentRight="true"
